@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent,
+  //  LoginComponent,
   ],
   imports: [
     AppMaterialModule
@@ -23,7 +23,8 @@ import { HomeComponent } from './home/home.component';
   ],
   exports: [
     HomeComponent,
-    LoginComponent],
+    //LoginComponent
+  ],
   providers: [],
 })
 

@@ -19,15 +19,35 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ComponentsModule } from './components/components.module';
 import { PageModule } from './pages/page.module';
 
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+import {TranslateService} from '@ngx-translate/core';
+import { LoginComponent } from './pages/login/login.component';
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeLayoutComponent,
     LoginLayoutComponent,
     NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule
+    , HttpClientModule
+    , TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        }
+      })
     , CommonModule
     , AppRoutingModule
     , ReactiveFormsModule
@@ -39,7 +59,7 @@ import { PageModule } from './pages/page.module';
   ],
 
   exports: [],
-  providers: [AuthService, AuthGuard, AppConfigService],
+  providers: [AuthService, AuthGuard, AppConfigService, TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

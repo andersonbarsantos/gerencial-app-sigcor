@@ -1,0 +1,15 @@
+{
+  "LOGIN": {
+    "TITLE": "Please login to continue",
+    "NOME": "username",
+    "SENHA": "Password",
+    "BTLOGIN":"Login"
+  },
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change language"
+  },
+  "DASHBOARD": {
+    "TITLE": "init Dashboard"
+  }
+}
