@@ -7,7 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'gerencial-app-sigcor';
+  title = 'Gerencial SigCor';
 
   constructor(private translate: TranslateService) {
     translate.addLangs(['en', 'br', 'fr']);

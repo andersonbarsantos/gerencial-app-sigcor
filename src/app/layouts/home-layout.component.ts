@@ -1,5 +1,8 @@
-import { Component , OnInit} from '@angular/core';
 import { SidebarService } from '../components/sidebar/sidebar.service';
+
+import { Component, HostListener, ViewChild , OnInit } from '@angular/core';
+import { MatDialog, MatMenuTrigger } from '@angular/material';
+
 
 @Component({
   selector: 'app-home-layout',
@@ -7,6 +10,8 @@ import { SidebarService } from '../components/sidebar/sidebar.service';
   styleUrls: ['./home-layout.component.scss']
 })
 export class HomeLayoutComponent implements OnInit {
+
+
 
   ngOnInit() {
 
