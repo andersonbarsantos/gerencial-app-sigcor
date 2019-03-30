@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
       private route: ActivatedRoute,
       private router: Router,
       private authenticationService: AuthenticationService
-  ) { }
+  ) {
+      
+   }
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
@@ -60,4 +62,6 @@ export class LoginComponent implements OnInit {
                   this.loading = false;
               });
   }
+
+
 }

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AppConfigService } from './../../app-config.service'
+// import { AppConfigService } from './../../app-config.service'
+import { AuthenticationService } from 'src/app/auth/authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
+  [x: string]: any;
   toggled = false;
   _hasBackgroundImage = true;
 
@@ -18,7 +20,7 @@ export class SidebarService {
       icon: 'fa fa-tachometer-alt',
       active: false,
       type: 'simple',
-      path:"/dashboard",
+      path: "/dashboard",
       badge: {
         text: 'New ',
         class: 'badge-warning'
@@ -44,8 +46,8 @@ export class SidebarService {
       icon: 'fa fa-book',
       active: false,
       type: 'simple',
-      path:"/cliente",
-      
+      path: "/cliente",
+
     },
     // {
     //   title: 'Cadastro',
@@ -161,7 +163,9 @@ export class SidebarService {
     // }
   ];
 
-  constructor(private configuracao : AppConfigService) {
+  constructor(
+    //private configuracao: AppConfigService,
+    private authenticationService: AuthenticationService) {
 
 
   }
@@ -179,12 +183,12 @@ export class SidebarService {
   }
 
   getMenuList() {
-    return this.menus ; // this.configuracao.getMenuSideBar();
-  } 
-
-  getConfig() {
-    return this.configuracao.getConfig();
+    return this.menus; // this.configuracao.getMenuSideBar();
   }
+
+  // getConfig() {
+  //   return this.configuracao.getConfig();
+  // }
 
 
   get hasBackgroundImage() {
@@ -193,5 +197,10 @@ export class SidebarService {
 
   set hasBackgroundImage(hasBackgroundImage) {
     this._hasBackgroundImage = hasBackgroundImage;
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }

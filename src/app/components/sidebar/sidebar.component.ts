@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.appConfig = this.sidebarservice.getConfig();
+  //  this.appConfig = this.sidebarservice.getConfig();
 
   }
 
@@ -54,6 +54,11 @@ export class SidebarComponent implements OnInit {
 
   hasBackgroundImage() {
     return this.sidebarservice.hasBackgroundImage;
+  }
+
+  logout()
+  {
+    this.sidebarservice.logout();
   }
 
 }
