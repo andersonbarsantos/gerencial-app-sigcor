@@ -20,8 +20,6 @@ export class SidebarComponent implements OnInit {
 
   constructor(public sidebarservice: SidebarService) {
     this.menus = sidebarservice.getMenuList();
-   
-
    }
 
   ngOnInit() {

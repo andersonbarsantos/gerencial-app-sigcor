@@ -15,11 +15,18 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       {
         path: 'dashboard',
-        loadChildren: './pages/dashboard/dashboard.module#DashboardModule'
+        loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'cliente',
+        loadChildren: './pages/cliente/cliente.module#ClienteModule',
+        canActivate: [AuthGuard]
       },
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
       }
     ]
   },
@@ -37,7 +44,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false, useHash:true })],
  
 exports: [RouterModule]
 })

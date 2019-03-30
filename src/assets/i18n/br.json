@@ -1,16 +1,19 @@
 {
-   "LOGIN":{
-      "TITLE":"Entre com seu login",
-      "NOME":"Nome",
-      "SENHA":"Senha",
-      "BTLOGIN":"Entrar"
-  } ,
-
-    "HOME": {
-      "TITLE": "Ola Mundo ngx-translate!",
-      "SELECT": "selecione o idioma"
-    },
-    "DASHBOARD" : {"TITLE":"painel inicial"}
-  }
-  
-  
+  "LOGIN": {
+    "TITLE": "Entre com seu login",
+    "NOME": "Nome",
+    "SENHA": "Senha",
+    "BTLOGIN": "Entrar"
+  },
+  "HOME": {
+    "TITLE": "Ola Mundo ngx-translate!",
+    "SELECT": "selecione o idioma"
+  },
+  "DASHBOARD": {
+    "TITLE": "painel inicial"
+  },
+  "CLIENTE": {
+    "TITLE": "Ola Mundo ngx-translate!",
+    "SELECT": "selecione o idioma"
+  },
+}
