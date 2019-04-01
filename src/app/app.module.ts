@@ -9,9 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AppBootstrapModule } from './app-bootstrap/app-bootstrap.module';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { ComponentsModule } from './components/components.module';
-import { PageModule } from './pages/page.module';
 
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -20,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from './auth/authentication.service';
 import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
+import { PageModule } from './pages/page.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -29,8 +27,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    
 
   ],
   imports: [
@@ -49,10 +45,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     , BrowserAnimationsModule
     , AppMaterialModule
     , AppBootstrapModule
-   // , ComponentsModule
     , PageModule
   ],
-
   exports: [],
   providers: [
     AuthenticationService
@@ -63,6 +57,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     // provider used to create fake backend
     , fakeBackendProvider
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,36 +1,26 @@
-<!-- <nav class="navbar navbar-dark bg-dark mb-5">
-    <a class="navbar-brand" href="/">Sistema de Gerenciamento de Corretora</a>
-    <div class="navbar-expand mr-auto">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home</a>
-        <a class="nav-item nav-link" href="#">Ajuda</a>
-        <a class="nav-item nav-link" href="#">Contato</a>
-      </div>
-    </div>
-    <div class="navbar-expand ml-auto navbar-nav">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
-          <i class="fa fa-github"></i>
-        </a>
-        <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
-          <i class="fa fa-medium"></i>
-        </a>
-      </div>
-    </div>
-  </nav>
-   -->
-<!-- 
-   <nav class="navbar sticky-top navbar-light bg-light">
-      <a class="navbar-brand" href="#">Sticky top</a>
-    </nav> -->
-
-    <div class="navbar-header">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
-      </button>
-      <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-      <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <div class="clearfix">
+    <button (click)="isCollapsed = !isCollapsed"
+      class="navbar-toggler pull-xs-right hidden-sm-up" type="button"
+      aria-controls="bd-main-nav"
+      aria-label="Toggle navigation">
+        {{menuIcon}}
+    </button>
+    <a (click)="isCollapsed = true" class="navbar-brand hidden-sm-up" [routerLink]="[brandMenu.path]">
+      {{brandMenu.title}}
+    </a>
   </div>
+  <div class="navbar-toggleable-xs navbar-collapse" id="bd-main-nav"
+  [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}">
+    <ul class="nav navbar-nav">
+      <li (click)="isCollapsed = true" class="nav-item" routerLinkActive="active">
+        <a class="navbar-brand hidden-xs-down" [routerLink]="[brandMenu.path]">{{brandMenu.title}}</a>
+      </li>
+      <li (click)="isCollapsed = true" *ngFor="let menuItem of menuItems"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItem)">
+        <a class="nav-item nav-link" [routerLink]="[menuItem.path]" routerLinkActive="active">{{menuItem.title}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

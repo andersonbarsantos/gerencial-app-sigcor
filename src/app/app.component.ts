@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Gerencial SigCor';
+  title = 'Gerencial SiGCOR';
   currentUser: User;
 
   constructor(
@@ -23,8 +23,6 @@ export class AppComponent {
 
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|br|fr/) ? browserLang : 'br');
-
-
   }
 
   logout() {

@@ -16,15 +16,37 @@ export class SidebarService {
       type: 'header'
     },
     {
+      title: 'Dados Basicos',
+      icon: 'fa fa-shopping-cart',
+      active: false,
+      type: 'dropdown',   
+      path: "",    
+      submenus: [
+        {
+          title: 'Usuario',
+          path:"/user"
+        },
+        {
+          title: 'Funcionarios',
+          path:"/funcionarios"
+        },
+        {
+          title: 'Ramos',
+          path : 'ramos'
+        },
+        {
+          title: 'Seguradoras',
+          path : '/seguradoras'
+        }
+      ]
+    },
+    {
       title: 'Dashboard',
       icon: 'fa fa-tachometer-alt',
       active: false,
       type: 'simple',
       path: "/dashboard",
-      badge: {
-        text: 'New ',
-        class: 'badge-warning'
-      },
+
       // submenus: [
       //   {
       //     title: 'Dashboard 1',
@@ -49,35 +71,23 @@ export class SidebarService {
       path: "/cliente",
 
     },
-    // {
-    //   title: 'Cadastro',
-    //   icon: 'fa fa-shopping-cart',
-    //   active: false,
-    //   type: 'dropdown',
-    //   path:"/",
-    //   badge: {
-    //     text: '3',
-    //     class: 'badge-danger'
-    //   },
-    //   submenus: [
-    //     {
-    //       title: 'Cliente',
-    //       path:"/home"
-    //     },
-    //     {
-    //       title: 'Funcionarios',
-    //       path:"/funcionarios"
-    //     },
-    //     {
-    //       title: 'Ramos',
-    //       path : 'ramos'
-    //     },
-    //     {
-    //       title: 'Seguradoras',
-    //       path : '/seguradoras'
-    //     }
-    //   ]
-    // },
+    {
+      title: 'Contratos',
+      icon: 'fa fa-book',
+      active: false,
+      type: 'simple',
+      path: "/contratos",
+
+    },
+    {
+      title: 'Financeiro',
+      icon: 'fa fa-book',
+      active: false,
+      type: 'simple',
+      path: "/financeiro",
+
+    },
+
     // {
     //   title: 'Financeiro',
     //   icon: 'far fa-gem',
@@ -186,9 +196,9 @@ export class SidebarService {
     return this.menus; // this.configuracao.getMenuSideBar();
   }
 
-  // getConfig() {
-  //   return this.configuracao.getConfig();
-  // }
+  getConfig() {
+   // return this.configuracao.getConfig();
+  }
 
 
   get hasBackgroundImage() {

@@ -5,23 +5,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppMaterialModule } from './../app-material/app-material.module';
 
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { ComponentsModule } from '../components/components.module';
+import { LoginComponent } from './login/login.component';
+
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { SidebarModule } from '../shared/sidebar/sidebar.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
+    NavbarComponent, 
+  
   ],
   imports: [
-    AppMaterialModule
+
+  AppMaterialModule
+  , RouterModule
     , ReactiveFormsModule
     , BrowserModule
-    , BrowserAnimationsModule
-    , ComponentsModule
-
-
+    , BrowserAnimationsModule  
+   ,  SidebarModule
+    //, AppBootstrapModule
   ],
   exports: [
     HomeComponent,

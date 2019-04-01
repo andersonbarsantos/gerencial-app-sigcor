@@ -6,25 +6,32 @@ import { HomeComponent } from './pages/home/home.component';
 
 const appRoutes: Routes = [
   {
-      path: '',
-      component: HomeComponent,
-      canActivate: [AuthGuard],
-      children: [
-        { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-        {
-          path: 'dashboard',
-          loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
-          canActivate: [AuthGuard]
-        },
-        {
-          path: 'cliente',
-          loadChildren: './pages/cliente/cliente.module#ClienteModule',
-          canActivate: [AuthGuard]
-        }],
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+      {
+        path: 'dashboard',
+        loadChildren: './pages/dashboard/dashboard.module#DashboardModule',
+        canActivate: [AuthGuard]
       },
+      {
+        path: 'cliente',
+        loadChildren: './pages/cliente/cliente.module#ClienteModule',
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'user',
+        loadChildren: './pages/user/user.module#UserModule',
+        canActivate: [AuthGuard]
+      }
+
+    ],
+  },
   {
-      path: 'login',
-      component: LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
 
   // otherwise redirect to home
@@ -32,8 +39,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, { enableTracing: false, useHash:true })],
- 
-exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes, { enableTracing: false, useHash: true })],
+
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

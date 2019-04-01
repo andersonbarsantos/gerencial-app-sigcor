@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-cliente-list',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteListComponent implements OnInit {
 
-  constructor() { }
+
+  rows = [];
+
+  temp = [];
+
+  columns = [
+    { prop: 'name' },
+    { name: 'Company' },
+    { name: 'Gender' }
+  ];
+  // @ViewChild(DatatableComponent) table: DatatableComponent;
+
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
