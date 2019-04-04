@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
+import {  APP_BASE_HREF } from '@angular/common';
 
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,25 +20,30 @@ import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helper
 import { PageModule } from './pages/page.module';
 import { SharedModule } from './shared/shared.module';
 
-
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule
-    , HttpClientModule
+    , ReactiveFormsModule
+    , BrowserAnimationsModule
+    , HttpClientModule  
+    , AppRoutingModule
+    , AppMaterialModule
+    , AppBootstrapModule
+    , PageModule
     , TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
+<<<<<<< HEAD
     })
     , CommonModule
     , AppRoutingModule
@@ -48,6 +53,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     , AppBootstrapModule
     , PageModule
     , SharedModule
+=======
+    })    
+
+>>>>>>> module
   ],
   exports: [SharedModule , PageModule],
   providers: [
@@ -55,6 +64,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     , TranslateService
     , { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
     , { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    , { provide: APP_BASE_HREF, useValue: '/' }
 
     // provider used to create fake backend
     , fakeBackendProvider

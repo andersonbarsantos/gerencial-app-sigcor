@@ -15,6 +15,7 @@ import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [
+<<<<<<< HEAD
     HomeComponent,
     LoginComponent,
     //NavbarComponent, 
@@ -23,17 +24,30 @@ import { SharedModule } from './../shared/shared.module';
   imports: [
 
     AppMaterialModule
+=======
+    HomeComponent
+    , LoginComponent
+    , NavbarComponent
+
+  ],
+  imports: [  
+  AppMaterialModule
+>>>>>>> module
     , RouterModule
     , ReactiveFormsModule
     , BrowserModule
     , BrowserAnimationsModule
     , SidebarModule
+<<<<<<< HEAD
     , SharedModule
     //, AppBootstrapModule
+=======
+>>>>>>> module
   ],
   exports: [
     HomeComponent,
     LoginComponent
+
   ],
   providers: [],
 })

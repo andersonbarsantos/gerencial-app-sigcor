@@ -29,12 +29,12 @@ export class SidebarService {
           path:"/user"
         },
         {
-          title: 'Funcionarios',
-          path:"/funcionarios"
+          title: 'Funcionario',
+          path:"/funcionario"
         },
         {
           title: 'Ramos',
-          path : 'ramos'
+          path : '/ramos'
         },
         {
           title: 'Seguradoras',

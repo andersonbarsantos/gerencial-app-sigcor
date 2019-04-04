@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,12 +19,30 @@ const appRoutes: Routes = [
       {
         path: 'cliente',
         loadChildren: './pages/cliente/cliente.module#ClienteModule',
+<<<<<<< HEAD
+=======
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'funcionario',
+        loadChildren: './pages/funcionario/funcionario.module#FuncionarioModule',
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        //loadChildren: './pages/home/home.module#homeModule',
+>>>>>>> module
         canActivate: [AuthGuard]
       },
       {
         path: 'user',
         loadChildren: './pages/user/user.module#UserModule',
         canActivate: [AuthGuard]
+<<<<<<< HEAD
+=======
+
+>>>>>>> module
       }
 
     ],
@@ -38,8 +56,14 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: '' }
 ];
 
+const config: ExtraOptions = {
+  useHash: true,
+  enableTracing: false
+};
+
+
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, { enableTracing: false, useHash: true })],
+  imports: [RouterModule.forRoot(appRoutes, config)],
 
   exports: [RouterModule]
 })

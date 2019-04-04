@@ -60,7 +60,11 @@ export const ROUTES: RouteInfo[] = [
   { path: 'contact', title: 'Contact', menuType: MenuType.RIGHT }
 ];
 
+<<<<<<< HEAD
 @Component({
+=======
+@Component({  
+>>>>>>> module
   selector: 'app-navbar',
   templateUrl: 'navbar.component.html',
   styleUrls: [ 'navbar.component.scss' ]
