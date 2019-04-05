@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 // import { AppConfigService } from './../../app-config.service'
 import { AuthenticationService } from 'src/app/auth/authentication.service';
+import { Routes, RouterModule, Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -175,6 +177,7 @@ export class SidebarService {
 
   constructor(
     //private configuracao: AppConfigService,
+    private route : Router,
     private authenticationService: AuthenticationService) {
 
 
@@ -211,6 +214,6 @@ export class SidebarService {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['/login']);
+    this.route.navigate(['/login']);
   }
 }
