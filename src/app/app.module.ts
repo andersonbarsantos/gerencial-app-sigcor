@@ -18,6 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from './auth/authentication.service';
 import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
 import { PageModule } from './pages/page.module';
+import { SharedModule } from './shared/shared.module';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -46,8 +47,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     , AppMaterialModule
     , AppBootstrapModule
     , PageModule
+    , SharedModule
   ],
-  exports: [],
+  exports: [SharedModule , PageModule],
   providers: [
     AuthenticationService
     , TranslateService

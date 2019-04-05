@@ -61,7 +61,6 @@ export const ROUTES: RouteInfo[] = [
 ];
 
 @Component({
-  moduleId: module.id,
   selector: 'app-navbar',
   templateUrl: 'navbar.component.html',
   styleUrls: [ 'navbar.component.scss' ]
