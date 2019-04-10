@@ -43,20 +43,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-<<<<<<< HEAD
-    })
-    , CommonModule
-    , AppRoutingModule
-    , ReactiveFormsModule
-    , BrowserAnimationsModule
-    , AppMaterialModule
-    , AppBootstrapModule
-    , PageModule
-    , SharedModule
-=======
     })    
 
->>>>>>> module
   ],
   exports: [SharedModule , PageModule],
   providers: [

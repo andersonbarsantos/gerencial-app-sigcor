@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   users: User[] = [];
+  title = "Sistema de Analise de Dados" ; 
 
   constructor(public sidebarservice: SidebarService) { }
   toggleSidebar() {

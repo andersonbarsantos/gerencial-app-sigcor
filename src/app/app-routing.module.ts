@@ -19,8 +19,6 @@ const appRoutes: Routes = [
       {
         path: 'cliente',
         loadChildren: './pages/cliente/cliente.module#ClienteModule',
-<<<<<<< HEAD
-=======
         canActivate: [AuthGuard]
       },
       {
@@ -32,17 +30,12 @@ const appRoutes: Routes = [
         path: 'home',
         component: HomeComponent,
         //loadChildren: './pages/home/home.module#homeModule',
->>>>>>> module
         canActivate: [AuthGuard]
       },
       {
         path: 'user',
         loadChildren: './pages/user/user.module#UserModule',
         canActivate: [AuthGuard]
-<<<<<<< HEAD
-=======
-
->>>>>>> module
       }
 
     ],

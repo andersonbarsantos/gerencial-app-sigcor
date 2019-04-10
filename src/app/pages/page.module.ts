@@ -8,41 +8,26 @@ import { AppMaterialModule } from './../app-material/app-material.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
-//import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from '../shared/sidebar/sidebar.module';
 import { SharedModule } from './../shared/shared.module';
 
+
 @NgModule({
   declarations: [
-<<<<<<< HEAD
     HomeComponent,
-    LoginComponent,
-    //NavbarComponent, 
+    LoginComponent,     
 
   ],
   imports: [
-
     AppMaterialModule
-=======
-    HomeComponent
-    , LoginComponent
-    , NavbarComponent
-
-  ],
-  imports: [  
-  AppMaterialModule
->>>>>>> module
     , RouterModule
     , ReactiveFormsModule
     , BrowserModule
     , BrowserAnimationsModule
     , SidebarModule
-<<<<<<< HEAD
     , SharedModule
-    //, AppBootstrapModule
-=======
->>>>>>> module
+    
   ],
   exports: [
     HomeComponent,

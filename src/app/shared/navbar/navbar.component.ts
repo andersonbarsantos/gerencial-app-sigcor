@@ -30,7 +30,7 @@
 // })
 
 // export class NavbarComponent implements OnInit{
- 
+
 //   constructor() { }
 
 //   ngOnInit() {
@@ -39,6 +39,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 
 export enum MenuType {
@@ -60,14 +61,10 @@ export const ROUTES: RouteInfo[] = [
   { path: 'contact', title: 'Contact', menuType: MenuType.RIGHT }
 ];
 
-<<<<<<< HEAD
 @Component({
-=======
-@Component({  
->>>>>>> module
   selector: 'app-navbar',
   templateUrl: 'navbar.component.html',
-  styleUrls: [ 'navbar.component.scss' ]
+  styleUrls: ['navbar.component.scss']
 })
 
 export class NavbarComponent implements OnInit {
@@ -76,8 +73,11 @@ export class NavbarComponent implements OnInit {
   isCollapsed = true;
 
 
-  
-  constructor() {}
+  @Input() title: string;
+
+
+
+  constructor() { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem.menuType !== MenuType.BRAND);

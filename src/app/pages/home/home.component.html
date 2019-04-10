@@ -1,36 +1,15 @@
-<!-- <div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
-  <app-sidebar></app-sidebar>
-  <main class="page-content">
-    <div class="container-fluid">
-        <main class="main">
-      <div class="row">
-        <div class="form-group col-md-12">
-  
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-      </main>
-    </div>
-  </main>
-</div>
-
- -->
-
 <div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
   <app-sidebar></app-sidebar>
   <main class="page-content">
     <div class="container-fluid">
+      <main class="main">
         <div class="row">
+          <div class="form-group col-md-12">
+            <app-navbar [title]="title"></app-navbar>
+            <router-outlet></router-outlet>
+          </div>
         </div>
-      <div class="row">
-        <div class="col-sm-8">
-          One of three columns
-        </div>
-        <div class="col-sm-4">
-          One of three columns
-        </div>
-        
-      </div>
+      </main>
     </div>
   </main>
 </div>
