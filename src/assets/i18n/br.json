@@ -16,4 +16,13 @@
     "TITLE": "Ola Mundo ngx-translate!",
     "SELECT": "selecione o idioma"
   },
+  "USER": {
+    "LIST-TITULO": "Lista de usuarios",
+    "NOME": "Nome",
+    "SOBRENOME": "Sobrenome",
+    "USERNAME": "Usuário",
+    "ADD": "Adicionar",
+    "EDIT": "Editar",
+    "DELETE": "Remover"
+  },
 }

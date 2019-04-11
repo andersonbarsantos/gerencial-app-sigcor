@@ -1,11 +1,24 @@
-<div class="card tasks sameheight-item" data-exclude="xs,sm">
-  <div class="card-header bordered">
-      <div class="header-block">
-          <h3 class="title">
-             Lista de Usuarios
-          </h3>
-      </div>
-     
-  </div>
-
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto">{{ 'USER.LIST-TITULO' | translate }}</h2>
+  <button class="btn btn-danger" style="width:100px" (click)="addUser()">{{ 'USER.ADD' | translate }}</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>{{ 'USER.NOME' | translate }}</th>
+      <th>{{ 'USER.SOBRENOME' | translate }}</th>
+      <th>{{ 'USER.USERNAME' | translate }}</th>      
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td class="hidden">{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <td><button class="btn btn-success" (click)="deleteUser(user)"> {{ 'USER.DELETE' | translate }}</button>
+        <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> {{ 'USER.EDIT' | translate }}</button></td>
+    </tr>
+    </tbody>
+  </table>
 </div>

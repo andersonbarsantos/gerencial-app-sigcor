@@ -1,18 +1,22 @@
 
 
 import { NgModule } from '@angular/core';
-import { UserListComponent } from './user-list/user-list.component';
+
 import { UserService } from './user.service';
 import { RouterModule, Routes } from '@angular/router';
+
+import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list' ,  pathMatch: 'full' },
   { path: 'list', component: UserListComponent },
+  { path: 'detail', component: UserDetailComponent },
 ];
 
 
 @NgModule({
-  declarations: [UserListComponent],
+  declarations: [UserListComponent,   UserDetailComponent],
   imports: [RouterModule.forChild(routes)],
   providers: [UserService]
 })
