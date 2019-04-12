@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { iService } from 'src/app/interfaces/iService';
+import { iService } from 'src/app/shared/interfaces/iService';
 
 @Injectable({
   providedIn: 'root'

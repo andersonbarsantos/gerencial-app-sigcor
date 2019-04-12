@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarModule } from './sidebar/sidebar.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarModule } from './components/sidebar/sidebar.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -12,15 +13,16 @@ import { SidebarModule } from './sidebar/sidebar.module';
     , SidebarModule
   ],
   providers: [
-    
+
   ],
   declarations: [
     NavbarComponent,
-    
+
   ],
   exports: [
-    NavbarComponent,
-    
+    NavbarComponent
+    , TranslateModule
+
   ],
 })
 export class SharedModule { }

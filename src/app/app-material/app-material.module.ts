@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -50,7 +50,7 @@ import {
   entryComponents: [
   ],
   imports: [
-    BrowserModule,
+
     BrowserAnimationsModule,
     FormsModule,
     MatBadgeModule,

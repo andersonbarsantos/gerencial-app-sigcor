@@ -1,24 +1,29 @@
-<div class="col-md-6 user-container">
-  <h2 style="margin: auto">{{ 'USER.LIST-TITULO' | translate }}</h2>
-  <button class="btn btn-danger" style="width:100px" (click)="addUser()">{{ 'USER.ADD' | translate }}</button>
+
+<div class="row">
+<div class="col-md-8">
+  <h2> User Details</h2>
+  <button class="btn btn-danger" (click)="addUser()"> Add User</button>
   <table class="table table-striped">
     <thead>
     <tr>
       <th class="hidden">Id</th>
-      <th>{{ 'USER.NOME' | translate }}</th>
-      <th>{{ 'USER.SOBRENOME' | translate }}</th>
-      <th>{{ 'USER.USERNAME' | translate }}</th>      
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Action</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let user of users">
       <td class="hidden">{{user.id}}</td>
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td>{{user.username}}</td>
-      <td><button class="btn btn-success" (click)="deleteUser(user)"> {{ 'USER.DELETE' | translate }}</button>
-        <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> {{ 'USER.EDIT' | translate }}</button></td>
+      <td>{{user.nome}}</td>
+      <td>{{user.sobreNome}}</td>
+      <td>{{user.cargo}}</td>
+      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+        <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
     </tr>
     </tbody>
   </table>
+</div>
+<div class="col-md-4"></div>
 </div>

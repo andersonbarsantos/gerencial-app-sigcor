@@ -17,7 +17,7 @@
     "SELECT": "selecione o idioma"
   },
   "USER": {
-    "LIST-TITULO": "Lista de usuarios",
+    "LIST": "Lista de usuarios",
     "NOME": "Nome",
     "SOBRENOME": "Sobrenome",
     "USERNAME": "Usuário",

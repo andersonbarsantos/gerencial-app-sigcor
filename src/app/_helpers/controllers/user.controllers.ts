@@ -3,17 +3,33 @@ import { HttpClient } from '@angular/common/http';
 
 import {Observable} from "rxjs";
 
-import { User } from 'src/app/models/user.model';
-import { ApiResponse } from 'src/app/models/api.response.model';
+import { User } from 'src/app/shared/models/user.model';
+import { ApiResponse } from 'src/app/shared/models/api.response.model';
 
 @Injectable()
-export class Usercontrollers {
+export class UserControllers {
 
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:8080/users/';
 
   login(loginPayload) : Observable<ApiResponse> {
     return this.http.post<ApiResponse>('http://localhost:8080/' + 'token/generate-token', loginPayload);
+  }
+
+  getUser(){
+    // return this.http.get<ApiResponse>(this.baseUrl);
+
+    const users: User[] = [
+      { id: 1
+      , username: 'barreto.develop@gmail.com'
+      , password: '123456'
+      , nome: 'Anderson Barreto'
+      , sobreNome: 'User'
+      , cargo :'Administrador' }
+  ];
+
+  return users ; 
+
   }
 
   getUsers() : Observable<ApiResponse> {

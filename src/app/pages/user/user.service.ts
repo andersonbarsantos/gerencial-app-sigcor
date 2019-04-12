@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
 
-import { User } from 'src/app/models/user.model';
-import { Usercontrollers } from 'src/app/_helpers/controllers/user.controllers';
+import { User } from 'src/app/shared/models/user.model';
+import { UserControllers } from 'src/app/_helpers/controllers/user.controllers';
 
 @Injectable()
 export class UserService {
 
-  constructor(private userControllers: Usercontrollers) { }
+  constructor(public userControllers: UserControllers) { }
+
+  users: User[];
 
   getUsers()  {
-    return  this.userControllers.getUsers();
+    // this.userControllers.getUsers().subscribe(data => {
+    //   this.users =  data.result;
+    //   return this.users ; 
+    // });    
+
+
+    return this.userControllers.getUser();
   }
 
   getUserById(id: number) {

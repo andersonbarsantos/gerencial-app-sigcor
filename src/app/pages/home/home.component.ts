@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { SidebarService } from 'src/app/shared/sidebar/sidebar.service';
+import { SidebarService } from 'src/app/shared/components/sidebar/sidebar.service';
 import { first } from 'rxjs/operators';
-import { User } from 'src/app/interfaces/user';
+
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-home',

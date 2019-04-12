@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { User } from './interfaces/user';
+
 import { AuthenticationService } from './auth/authentication.service';
 import { Router } from '@angular/router';
+import { User } from './shared/models/user.model';
 
 @Component({
   selector: 'app-root',

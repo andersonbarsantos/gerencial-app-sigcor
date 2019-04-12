@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,10 @@ import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helper
 import { PageModule } from './pages/page.module';
 import { SharedModule } from './shared/shared.module';
 
+import { ControllersModule } from './_helpers/controllers/controllers.module';
+import { UserControllers } from 'src/app/_helpers/controllers/user.controllers';
+
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
@@ -29,24 +33,26 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppComponent
   ],
   imports: [
+
     BrowserModule
     , ReactiveFormsModule
     , BrowserAnimationsModule
-    , HttpClientModule  
+    , HttpClientModule
     , AppRoutingModule
     , AppMaterialModule
-    , AppBootstrapModule
+    , AppBootstrapModule    
     , PageModule
+    , SharedModule
     , TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })    
+    })
 
   ],
-  exports: [SharedModule , PageModule],
+  exports: [],
   providers: [
     AuthenticationService
     , TranslateService

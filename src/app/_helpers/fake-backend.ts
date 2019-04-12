@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { User } from '../interfaces/user';
+import { User } from '../shared/models/user.model';
+
 
 
 @Injectable()
@@ -12,8 +13,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             { id: 1
             , username: 'barreto.develop@gmail.com'
             , password: '123456'
-            , firstName: 'Anderson Barreto'
-            , lastName: 'User'
+            , nome: 'Anderson Barreto'
+            , sobreNome: 'User'
             , cargo :'Administrador' }
         ];
 
@@ -30,8 +31,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return ok({
                     id: user.id,
                     username: user.username,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
+                    firstName: user.nome,
+                    lastName: user.sobreNome,
                     token: `fake-jwt-token` ,
                     cargo :user.cargo
                 });
