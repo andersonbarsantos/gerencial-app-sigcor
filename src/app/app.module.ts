@@ -20,9 +20,6 @@ import { JwtInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helper
 import { PageModule } from './pages/page.module';
 import { SharedModule } from './shared/shared.module';
 
-import { ControllersModule } from './_helpers/controllers/controllers.module';
-import { UserControllers } from 'src/app/_helpers/controllers/user.controllers';
-
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);

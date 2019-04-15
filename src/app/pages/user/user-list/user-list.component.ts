@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from "@angular/router";
 
-import { User } from 'src/app/models/user.model';
 import { UserService } from '../user.service';
 import { TranslateService } from '@ngx-translate/core';
+import { User } from 'src/app/shared/models/user.model';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class UserListComponent implements OnInit {
 
-  users: any;
+  users: User[];
 
   constructor(private router: Router
     , private userService: UserService   

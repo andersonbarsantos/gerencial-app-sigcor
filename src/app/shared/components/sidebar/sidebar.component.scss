@@ -259,7 +259,7 @@
 
   .sidebar-footer {
 
-    position: relative;
+    position: absolute;
     width: 100%;
     bottom: 0;
     display: flex;
@@ -417,8 +417,8 @@ $bg-sidebar-wrapper : #1d1d1d;
 $border-color : #2b2b2b;
 $footer-top-border-color :#3a3a3a;
 $color:#bdbdbd;
-$header-menu-color :#eeeeee;
-$hover-color:#5be239;
+$header-menu-color :#6c7b88;
+$hover-color:#ffffff;
 $shadow-color:#131212;
 $bg-scrollbar :#636363;
 
@@ -503,7 +503,7 @@ $img-shadow-color:rgba(0, 0, 0, 0.5);
   // styles with background image
   &.sidebar-bg {
 
-    background-image: url(/assets/img/bg0.jpg);
+    background-image: url(/assets/img/bg1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
